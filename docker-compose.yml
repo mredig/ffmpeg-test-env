@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  ffmpeg:
+    build: ./
+    image: ffmpegserver:latest
+    expose:
+      - "9000"
+    restart: unless-stopped
+    volumes:
+      - ./www:/root/www
+    # cap_add:
+    #   - NET_ADMIN #needs to stay in to allow vpn to work
+    # devices:
+    #   - "/dev/net/tun:/dev/net/tun"
+    # hostname: "vpn"
