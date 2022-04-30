@@ -5,8 +5,8 @@ services:
   ffmpeg:
     build: ./
     image: ffmpegserver:latest
-    expose:
-      - "9000"
+    ports:
+      - '9000:9000'
     restart: unless-stopped
     volumes:
       - ./www:/root/www
